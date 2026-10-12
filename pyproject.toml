@@ -1,0 +1,20 @@
+[project]
+name = "ledgereval"
+version = "0.1.0"
+description = "Evals for Accounts Payable AI agents, built on a vendored evalkit harness"
+requires-python = ">=3.10"
+dependencies = ["anthropic>=1.13"]
+
+[project.optional-dependencies]
+dev = ["pytest>=8"]
+
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools.packages.find]
+include = ["ledgereval*", "evalkit*"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["."]
